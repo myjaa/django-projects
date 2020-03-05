@@ -54,7 +54,7 @@ ROOT_URLCONF = 'wordcounter.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r'C:\Users\yusuf\Downloads\my projects\wordcounter\wordcounter\templates'],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
