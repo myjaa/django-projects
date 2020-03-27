@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>Jobs</title>
+    <title>Blog</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
 
@@ -64,7 +64,7 @@
             <path d="M2.5 11h1v1h-1v-1zm2 0h1v1h-1v-1zm-2 2h1v1h-1v-1zm2 0h1v1h-1v-1zm6-10h1v1h-1V3zm2 0h1v1h-1V3zm-4 2h1v1h-1V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm-2 2h1v1h-1V7zm2 0h1v1h-1V7zm-4 0h1v1h-1V7zm0 2h1v1h-1V9zm2 0h1v1h-1V9zm2 0h1v1h-1V9zm-4 2h1v1h-1v-1zm2 0h1v1h-1v-1zm2 0h1v1h-1v-1z"/>
         </svg>
         
-        <strong>Jobs</strong>
+        <strong>Blog</strong>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -77,10 +77,10 @@
 
   <section class="jumbotron text-center">
     <div class="container">
-      <h1>Jobs example</h1>
+      <h1>Blogs example</h1>
       <p class="lead text-muted">This is just a demo.</p>
       <p>
-        <a href="{% url 'allblog' %}" class="btn btn-primary my-2">Blog</a>
+        <a href="{% url 'home' %}" class="btn btn-primary my-2">Jobs</a>
       </p>
     </div>
   </section>
@@ -89,18 +89,19 @@
     <div class="container">
 
       <div class="row">
-      {% for job in jobs.all %}
+      {% for blog in blog.all %}
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{ job.image.url}}" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" /></img>
+            <h2>{{blog.title}}</h2>
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{ blog.img.url}}" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" /></img>
             <div class="card-body">
-              <p class="card-text">{{ job.summary }}</p>
+              <p class="card-text">{{ blog.body }}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                 </div>
-                <small class="text-muted">9 mins</small>
+                <small class="text-muted">{{blog.pub_date}}</small>
               </div>
             </div>
           </div>
